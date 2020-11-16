@@ -90,4 +90,5 @@ function validURL(str)
   //           '(\\?[;&amp;a-z\\d%_.~+=-]*)?'+ // query string
   //           '(\\#[-a-z\\d_]*)?$','i');
   // return pattern.test(str);
+  return true;
 }
