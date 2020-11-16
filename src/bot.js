@@ -23,7 +23,7 @@ module.exports = {
     // message event
     client.on('message', msg =>
     {
-      if(msg.channel.id == '775510593028751441'){   // Channel used to configure the source code of your server. YOU SHOULD CHANGE THIS HERE!
+      if(msg.channel.id == '777732130230501376'){   // Channel used to configure the source code of your server. YOU SHOULD CHANGE THIS HERE!
 
         switch (msg.content){
           case '/help':
