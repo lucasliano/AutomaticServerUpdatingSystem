@@ -6,6 +6,7 @@ module.exports = {
   updateSrc: function ( cmd ) // DO NOT CHANGE ANYTHING HERE!
   {
     try{
+      cmd.run('cd ..');
       cmd.run('sudo chmod -R 777 ./');
       cmd.run('cd myServer');
       cmd.run('git fetch');
@@ -22,5 +23,5 @@ module.exports = {
 
 function run (cmd) //You can change this function.
 {
-  cmd.run('sudo node --experimental-worker main.js > stdout.txt 2> stderr.txt &');
+  cmd.run('sudo node --experimental-worker ./myServer/main.js > stdout.txt 2> stderr.txt &');
 }
