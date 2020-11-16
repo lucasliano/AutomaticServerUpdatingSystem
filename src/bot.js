@@ -67,8 +67,8 @@ module.exports = {
             if (runningPID != -1)
             {
               cmd.run('kill '+runningPID);
-              svFuncs.updateSrc(cmd);
             }
+            svFuncs.updateSrc(cmd);
             break;
 
           case '/endSession':
