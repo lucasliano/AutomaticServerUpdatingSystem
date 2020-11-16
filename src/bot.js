@@ -13,7 +13,7 @@ module.exports = {
     const Discord_Token = process.env.DISCORD_TOKEN;
     client.login(Discord_Token);
 
-    var update = false;
+    var gitLink = 'https://github.com/lucasliano/AutomaticServerUpdatingSystem';
 
     // ready event
     client.on('ready', () => {
@@ -23,23 +23,35 @@ module.exports = {
     // message event
     client.on('message', msg =>
     {
-      if(msg.channel.id == '777732130230501376'){   // Channel used to configure the source code of your server. YOU SHOULD CHANGE THIS HERE!
+      if(msg.channel.id == '777732130230501376') // Channel used to configure the source code of your server. YOU SHOULD CHANGE THIS HERE!
+      {
 
-        switch (msg.content){
+        if (msg.content.slice(0,4) == '/git')
+        {
+
+          if(validURL(msg.content.split(/\s+/)))
+          {
+            gitLink = msg.content.split(/\s+/);
+            msg.channel.send('Working on ' + gitLink);
+            bot.clone(gitLink);
+          }else{
+            msg.Channel.send('The argument isnt a link!');
+            msg.Channel.send('The actual link is ' + gitLink);
+
+          }
+        }
+        switch (msg.content)
+        {
           case '/help':
             msg.reply('commands:');
             msg.channel.send('/hi: Should reply "hi!".');
-            msg.channel.send('/git: Returns the github url of the project.');
+            msg.channel.send('/git <link>: Takes the link of your GitHub repo and clone it in the ./myServer.');
             msg.channel.send('/updateSrc: Updates the state of the main branch of the project in ./myServer');
             msg.channel.send('/endSession: Kills this process! DO NOT EXECUTE IF YOU DONT HAVE ACCESS TO THE SERVER TERMINAL!');
             break;
 
           case '/hi':
             msg.reply('Hello!');
-            break;
-
-          case '/git':
-            msg.channel.send('https://github.com/lucasliano/AutomaticServerUpdatingSystem');
             break;
 
           case '/updateSrc':
@@ -59,3 +71,14 @@ module.exports = {
     });
   }//,
 };
+
+function validURL(str)
+{
+  var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+  return !!pattern.test(str);
+}
