@@ -35,7 +35,7 @@ module.exports = {
             try
             {
               msg.channel.send('Working on ' + gitLink);
-              cmd.run('chmod -r 777 ./');
+              cmd.run('sudo chmod -R 777 ./');
               cmd.run('git clone ' + gitLink + ' myServer');
             }catch(error)
             {
