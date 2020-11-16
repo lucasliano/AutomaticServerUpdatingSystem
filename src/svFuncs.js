@@ -23,5 +23,5 @@ module.exports = {
 
 function run (cmd) //You can change this function.
 {
-  cmd.run('sudo node --experimental-worker ./myServer/main.js > stdout.txt 2> stderr.txt &');
+  cmd.run('sudo node --experimental-worker ./myServer/main.js > ./myServer/stdout.txt 2> ./myServer/stderr.txt &');
 }
