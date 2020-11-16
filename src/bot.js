@@ -40,7 +40,7 @@ module.exports = {
             {
               console.error("Error on 'updateSrc()'" + error);
             }
-            msg.channel.send('You have to update your .gitignore files!'');
+            msg.channel.send('You have to update your .gitignore files!');
 
           }else{
             msg.channel.send('The argument isnt a link!');
