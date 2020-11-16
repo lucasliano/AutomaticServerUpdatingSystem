@@ -32,9 +32,9 @@ module.exports = {
           if(validURL(msg.content.split(espacio)[1]))
           {
             gitLink = msg.content.split(espacio)[1];
-            msg.channel.send('Working on ' + gitLink);
             try
             {
+              msg.channel.send('Working on ' + gitLink);
               cmd.run('git clone ' + gitLink + ' myServer');
             }catch(error)
             {
@@ -82,12 +82,12 @@ module.exports = {
 
 function validURL(str)
 {
-  console.log(str);
-  var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
-            '((\\d{1,3}\\.){3}\\d{1,3}))'+ // ip (v4) address
-            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ //port
-            '(\\?[;&amp;a-z\\d%_.~+=-]*)?'+ // query string
-            '(\\#[-a-z\\d_]*)?$','i');
-  return pattern.test(str);
+  console.log('Depurar esto!');
+  // var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+  //           '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
+  //           '((\\d{1,3}\\.){3}\\d{1,3}))'+ // ip (v4) address
+  //           '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ //port
+  //           '(\\?[;&amp;a-z\\d%_.~+=-]*)?'+ // query string
+  //           '(\\#[-a-z\\d_]*)?$','i');
+  // return pattern.test(str);
 }
