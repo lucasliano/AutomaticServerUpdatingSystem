@@ -12,7 +12,7 @@ module.exports = {
       cmd.run('git reset --hard');
       cmd.run('git pull --force');
       console.log("> [GIT] Updated with origin/master");
-      run();
+      run(cmd);
     } catch (error)
     {
       console.error("Error on 'updateSrc()'" + error);
@@ -20,7 +20,7 @@ module.exports = {
   }
 }
 
-function run () //You can change this function.
+function run (cmd) //You can change this function.
 {
   cmd.run('sudo node --experimental-worker main.js > stdout.txt 2> stderr.txt &');
 }
