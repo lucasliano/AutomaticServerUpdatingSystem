@@ -35,8 +35,8 @@ module.exports = {
             msg.channel.send('Working on ' + gitLink);
             bot.clone(gitLink);
           }else{
-            msg.Channel.send('The argument isnt a link!');
-            msg.Channel.send('The actual link is ' + gitLink);
+            msg.channel.send('The argument isnt a link!');
+            msg.channel.send('The actual link is ' + gitLink);
 
           }
         }
