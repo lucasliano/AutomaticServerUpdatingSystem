@@ -29,9 +29,9 @@ module.exports = {
         if (msg.content.slice(0,4) == '/git')
         {
 
-          if(validURL(msg.content.split(/\s+/)[0]))
+          if(validURL(msg.content.split(/\s+/)[1]))
           {
-            gitLink = msg.content.split(/\s+/[0]);
+            gitLink = msg.content.split(/\s+/[1]);
             msg.channel.send('Working on ' + gitLink);
             try
             {
