@@ -4,7 +4,7 @@ module.exports = {
   run: function ()
   {
     // svFuncs
-    const svFuncs = require("./src/svFuncs.js");
+    const svFuncs = require("./svFuncs.js");
     // cmd
     const cmd = require("node-cmd");
     // Discrod.js setup
