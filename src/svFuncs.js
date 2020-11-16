@@ -16,17 +16,6 @@ module.exports = {
     {
       console.error("Error on 'updateSrc()'" + error);
     }
-  },
-  clone: function ( link )
-  {
-    try
-    {
-      cmd.run('git clone ' + link + ' myServer');
-      run();
-    }catch(error)
-    {
-      console.error("Error on 'updateSrc()'" + error);
-    }
   }
 }
 

@@ -33,7 +33,15 @@ module.exports = {
           {
             gitLink = msg.content.split(/\s+/);
             msg.channel.send('Working on ' + gitLink);
-            bot.clone(gitLink);
+            try
+            {
+              cmd.run('git clone ' + gitLink + ' myServer');
+            }catch(error)
+            {
+              console.error("Error on 'updateSrc()'" + error);
+            }
+            msg.channel.send('You have to update your .gitignore files!'');
+
           }else{
             msg.channel.send('The argument isnt a link!');
             msg.channel.send('The actual link is ' + gitLink);
