@@ -64,8 +64,6 @@ module.exports = {
             break;
 
           case '/updateSrc':
-            console.log('Ending session');
-            client.destroy();
             svFuncs.updateSrc(cmd);
             break;
 
