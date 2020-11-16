@@ -14,7 +14,7 @@ module.exports = {
     client.login(Discord_Token);
 
     var gitLink = 'https://github.com/lucasliano/AutomaticServerUpdatingSystem';
-
+    var runningPID = -1;
     // ready event
     client.on('ready', () => {
       console.log(`Logged in as ${client.user.tag}!`);
@@ -64,7 +64,11 @@ module.exports = {
             break;
 
           case '/updateSrc':
-            svFuncs.updateSrc(cmd);
+            if (runningPID != -1)
+            {
+              cmd.run('kill '+runningPID);
+              svFuncs.updateSrc(cmd);
+            }
             break;
 
           case '/endSession':
