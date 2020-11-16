@@ -6,7 +6,6 @@ module.exports = {
   updateSrc: function ( cmd ) // DO NOT CHANGE ANYTHING HERE!
   {
     try{
-      cmd.run('cd ..');
       cmd.run('sudo chmod -R 777 ./');
       cmd.run('cd myServer');
       cmd.run('git fetch');
