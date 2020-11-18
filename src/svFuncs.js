@@ -7,9 +7,9 @@ module.exports = {
   {
     try{
       cmd.run('sudo chmod -R 777 ./');
-      cmd.run('git -C ./myServer fetch');
-      cmd.run('git -C ./myServer reset --hard');
-      cmd.run('git -C ./myServer pull --force');
+      cmd.run('sudo git -C ./myServer fetch');
+      cmd.run('sudo git -C ./myServer reset --hard');
+      cmd.run('sudo git -C ./myServer pull --force');
       console.log("> [GIT] Updated with origin/master");
       var PID = run(cmd);
       console.log("> [PID] The main.js process is running on "+PID);
