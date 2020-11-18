@@ -26,5 +26,5 @@ module.exports = {
 function run (cmd) //You can change this function.
 {
   var ProcessID = cmd.run('sudo node --experimental-worker ./myServer/main.js > ./myServer/stdout.txt 2> ./myServer/stderr.txt &');
-  return ProcessID;
+  return ProcessID.pid;
 }
