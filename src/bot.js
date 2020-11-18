@@ -53,10 +53,10 @@ module.exports = {
         {
           case '/help':
             msg.reply('commands:');
-            msg.channel.send('/hi: Should reply "hi!".');
-            msg.channel.send('/git <link>: Takes the link of your GitHub repo and clone it in the ./myServer.');
-            msg.channel.send('/updateSrc: Updates the state of the main branch of the project in ./myServer');
-            msg.channel.send('/endSession: Kills this process! DO NOT EXECUTE IF YOU DONT HAVE ACCESS TO THE SERVER TERMINAL!');
+            msg.channel.send('hi: Should reply "hi!".');
+            msg.channel.send('git <link>: Takes the link of your GitHub repo and clone it in the ./myServer.');
+            msg.channel.send('updateSrc: Updates the state of the main branch of the project in ./myServer');
+            msg.channel.send('endSession: Kills this process! DO NOT EXECUTE IF YOU DONT HAVE ACCESS TO THE SERVER TERMINAL!');
             break;
 
           case '/hi':
